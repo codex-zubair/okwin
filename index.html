@@ -14,12 +14,13 @@
         /* Default: Gray background for desktop */
         body {
             width: 100vw;
-            height: 100vh;
             background-color: #bd9e9e; /* Gray background for desktop */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Align to top, not center */
             font-family: Arial, sans-serif;
+            flex-direction: column; /* Allows the content to grow vertically */
+            min-height: 100vh; /* Ensures the body will fill at least the full viewport height */
         }
 
         .image-container {
@@ -92,7 +93,7 @@
                 width: 150px;
                 height: 150px;
                 margin: 20px auto;
-                 background-image: url('https://sikkimgamee.online/wp-content/uploads/2025/01/Lachung-City-In-between-the-Mountain-Ranges-150x150.jpg');
+                background-image: url('https://sikkimgamee.online/wp-content/uploads/2025/01/Lachung-City-In-between-the-Mountain-Ranges-150x150.jpg');
                 background-size: cover;
                 background-position: center;
             }
@@ -101,7 +102,7 @@
                 width: 150px;
                 height: 150px;
                 margin: 20px auto;
-                 background-image: url('https://sikkimgamee.online/wp-content/uploads/2025/01/Sikim-Sambandh-blog-150x150.webp');
+                background-image: url('https://sikkimgamee.online/wp-content/uploads/2025/01/Sikim-Sambandh-blog-150x150.webp');
                 background-size: cover;
                 background-position: center;
             }
