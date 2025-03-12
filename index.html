@@ -19,9 +19,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
             font-family: Arial, sans-serif;
-            text-align: center;
         }
 
         .image-container {
@@ -42,29 +40,53 @@
                 background-position: center;
                 background-repeat: no-repeat;
             }
+            .desktop-message {
+                display: none; /* Hide on mobile */
+            }
         }
 
-        /* Show "Hello World" message only on desktop */
+        /* Show blog title only on desktop */
         @media (min-width: 769px) {
             body {
                 background-color: #bd9e9e; /* Full gray background for desktop */
+                justify-content: flex-start; /* Align message to top on desktop */
+                padding: 20px;
             }
-               .desktop-message {
+
+            .desktop-message {
                 display: block;
                 font-size: 32px;
+                font-family: "Roboto", Sans-serif;
+                font-weight: 600;
+                color: #000000;
+                text-align: center;
+                line-height: 1.5;
+                margin: 0 auto;
+                max-width: 800px; /* Limit the width for readability */
+            }
+
+            .desktop-message h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: #ffffff;
+            }
+
+            .desktop-message p {
+                font-size: 18px;
+                color: #ffffff;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Desktop View -->
-    <section class="desktop-message">
-        <h1>Discovering the Charm of Sikkim: A Himalayan Gem</h1>
-        <p>Sikkim, though a small state in northeastern India, is a treasure trove of breathtaking landscapes, diverse culture, and unmatched serenity. Tucked away in the embrace of the towering Himalayas, it serves as a perfect retreat for nature lovers, thrill-seekers, and those looking to escape the fast pace of urban life. From the snow-capped peaks of Mount Kanchenjunga to the tranquil lakes like Tsomgo, Sikkim’s scenic wonders promise to leave a lasting impression. The state’s lush valleys, pristine rivers, and rare wildlife add to its allure, while adventurous activities such as trekking, river rafting, and paragliding bring visitors closer to nature.</p>
-    </section>
+    <!-- Desktop View: Blog Content -->
+    <div class="desktop-message">
+        <h2>Discovering the Charm of Sikkim: A Himalayan Gem</h2>
+        <p>Sikkim, located in the northeastern part of India, is a beautiful state nestled in the Himalayas. Known for its stunning landscapes, rich culture, and vibrant traditions, Sikkim offers travelers a chance to explore both nature and history. From the majestic Kanchenjunga, the third highest peak in the world, to the lush green valleys and pristine lakes, Sikkim is a paradise for adventure enthusiasts and nature lovers alike.</p>
+    </div>
 
-    <!-- Mobile View -->
+    <!-- Mobile View: Image only -->
     <div class="image-container"></div>
 
 </body>
