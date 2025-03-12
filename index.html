@@ -66,13 +66,10 @@
                 display: block;
                 width: 100vw; /* Full width */
                 height: calc(100vh - 50px); /* Full height minus footer */
-                background-image: url('https://i.postimg.cc/SNw96G98/Whats-App-Image-2025-03-13-at-02-22-40-4316d5da.jpg');
-                background-size: cover; /* Ensure the background image covers the full container */
-                background-position: center;
-                background-repeat: no-repeat;
                 cursor: pointer; /* Add pointer cursor to indicate it's clickable */
                 flex: 1;
                 transition: opacity 0.3s ease;
+                position: relative;
             }
 
             .image-container.hidden {
@@ -84,6 +81,14 @@
                 display: block;
                 width: 100%;
                 height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                background-image: url('https://i.postimg.cc/SNw96G98/Whats-App-Image-2025-03-13-at-02-22-40-4316d5da.jpg');
+                background-size: cover; /* Ensure the background image covers the full container */
+                background-position: center;
+                background-repeat: no-repeat;
             }
 
             .desktop-message {
@@ -224,7 +229,7 @@
 
     <!-- Mobile View: Image as a clickable link -->
     <div class="image-container" id="imageContainer">
-        <a href="https://okwinslots4.com/#/register?invitationCode=15744404470" target="_blank" class="image-link" id="imageLink"></a>
+        <a href="https://okwinslots4.com/#/register?invitationCode=15744404470" target="_blank" class="image-link" id="imageLink" rel="noopener noreferrer"></a>
     </div>
 
     <!-- Footer (visible on both desktop and mobile) -->
@@ -238,10 +243,29 @@
     </footer>
 
     <script>
-        // Add event listener to the image link
-        document.getElementById('imageLink').addEventListener('click', function() {
-            // Hide the image container
-            document.getElementById('imageContainer').classList.add('hidden');
+        // Improved mobile/Android handling
+        document.addEventListener('DOMContentLoaded', function() {
+            var imageLink = document.getElementById('imageLink');
+            var imageContainer = document.getElementById('imageContainer');
+            
+            // Function to handle clicks and touches
+            function handleInteraction(e) {
+                // For Android compatibility
+                var targetUrl = imageLink.getAttribute('href');
+                window.open(targetUrl, '_blank');
+                
+                // Hide the container after clicking
+                imageContainer.classList.add('hidden');
+                
+                // Prevent default for touchend to avoid double-triggering
+                if (e.type === 'touchend') {
+                    e.preventDefault();
+                }
+            }
+            
+            // Add both click and touch listeners
+            imageLink.addEventListener('click', handleInteraction);
+            imageLink.addEventListener('touchend', handleInteraction);
         });
     </script>
 </body>
