@@ -10,7 +10,21 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        /* Default: Show desktop message, hide image */
+        .desktop-message {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
         .image-container {
             display: none; /* Hide by default */
         }
@@ -28,11 +42,20 @@
                 align-items: center;
                 justify-content: center;
             }
+            .desktop-message {
+                display: none; /* Hide desktop message on mobile */
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Desktop View -->
+    <div class="desktop-message">
+        <h1>I'm desktop, will be blog soon!</h1>
+    </div>
+
+    <!-- Mobile View -->
     <div class="image-container"></div>
 
 </body>
