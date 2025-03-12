@@ -39,9 +39,27 @@
                 justify-content: center;
             }
         }
+
+        /* Show heading only on larger screens (desktop) */
+        @media (min-width: 769px) {
+            .desktop-heading {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+                color: white;
+                font-size: 32px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Desktop View -->
+    <div class="desktop-heading">
+        <h2>Discovering the Charm of Sikkim: A Himalayan Gem</h2>
+    </div>
 
     <!-- Mobile View -->
     <div class="image-container"></div>
