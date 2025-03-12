@@ -12,27 +12,28 @@
         }
         
         .image-container {
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-            background-image: url('https://i.postimg.cc/SNw96G98/Whats-App-Image-2025-03-13-at-02-22-40-4316d5da.jpg');
-            background-size: cover; /* Cover entire screen */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* No repetition */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white; /* Text color */
-            font-size: 24px;
-            font-family: Arial, sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for visibility */
+            display: none; /* Hide by default */
+        }
+
+        /* Show image only on screens smaller than 768px (mobile) */
+        @media (max-width: 768px) {
+            .image-container {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                background-image: url('https://i.postimg.cc/SNw96G98/Whats-App-Image-2025-03-13-at-02-22-40-4316d5da.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                align-items: center;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="image-container">
-    </div>
+    <div class="image-container"></div>
 
 </body>
 </html>
