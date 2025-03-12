@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Image with CSS</title>
+    <title>ok win</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         .image-container {
-            width: 500px; /* Set the width */
-            height: 300px; /* Set the height */
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
             background-image: url('https://i.postimg.cc/kgBj4wmb/okwin.jpg');
-            background-size: cover; /* Adjusts size */
-            background-position: center; /* Centers the image */
-            background-repeat: no-repeat; /* Prevents repetition */
-            border: 2px solid #000; /* Optional: Add border */
+            background-size: cover; /* Cover entire screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* No repetition */
         }
     </style>
 </head>
 <body>
 
-    <h1>Hello, World!</h1>
-    <p>This is a test 2.</p>
     <div class="image-container"></div>
 
 </body>
