@@ -72,6 +72,12 @@
                 background-repeat: no-repeat;
                 cursor: pointer; /* Add pointer cursor to indicate it's clickable */
                 flex: 1;
+                transition: opacity 0.3s ease;
+            }
+
+            .image-container.hidden {
+                opacity: 0;
+                pointer-events: none;
             }
 
             .image-link {
@@ -123,6 +129,13 @@
                 font-size: 18px;
                 color: #ffffff;
                 line-height: 1.6;
+            }
+
+            .desktop-message h3 {
+                font-size: 28px;
+                margin-top: 25px;
+                margin-bottom: 15px;
+                color: #ffffff;
             }
 
             /* Add image under the blog content */
@@ -210,8 +223,8 @@
     </div>
 
     <!-- Mobile View: Image as a clickable link -->
-    <div class="image-container">
-        <a href="https://okwinslots4.com/#/register?invitationCode=15744404470" class="image-link"></a>
+    <div class="image-container" id="imageContainer">
+        <a href="https://okwinslots4.com/#/register?invitationCode=15744404470" target="_blank" class="image-link" id="imageLink"></a>
     </div>
 
     <!-- Footer (visible on both desktop and mobile) -->
@@ -222,8 +235,14 @@
             <a href="https://okwin.blog/privacy-policy-2/">Privacy Policy</a> |
             <a href="https://okwin.blog/terms-conditions/">Terms & Conditions</a>
         </div>
-      
     </footer>
 
+    <script>
+        // Add event listener to the image link
+        document.getElementById('imageLink').addEventListener('click', function() {
+            // Hide the image container
+            document.getElementById('imageContainer').classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
