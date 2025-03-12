@@ -21,10 +21,35 @@
             font-family: Arial, sans-serif;
             flex-direction: column; /* Allows the content to grow vertically */
             min-height: 100vh; /* Ensures the body will fill at least the full viewport height */
+            position: relative; /* For footer positioning */
         }
 
         .image-container {
             display: none; /* Hide by default */
+        }
+
+        .footer {
+            width: 100%;
+            padding: 15px 0;
+            background-color: white;
+            color: #333;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative; /* Ensure it's part of normal flow */
+            bottom: 0;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         /* Show image only on screens smaller than 768px (mobile) */
@@ -33,20 +58,35 @@
                 background-color: transparent; /* Remove gray background on mobile */
                 height: 100%; /* Make sure the body takes the full height of the screen */
                 margin: 0; /* Remove any margin */
+                display: flex;
+                flex-direction: column;
             }
 
             .image-container {
-                display: flex;
+                display: block;
                 width: 100vw; /* Full width */
-                height: 100vh; /* Full height */
+                height: calc(100vh - 50px); /* Full height minus footer */
                 background-image: url('https://i.postimg.cc/SNw96G98/Whats-App-Image-2025-03-13-at-02-22-40-4316d5da.jpg');
                 background-size: cover; /* Ensure the background image covers the full container */
                 background-position: center;
                 background-repeat: no-repeat;
+                cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+                flex: 1;
+            }
+
+            .image-link {
+                display: block;
+                width: 100%;
+                height: 100%;
             }
 
             .desktop-message {
                 display: none; /* Hide on mobile */
+            }
+            
+            .footer {
+                position: relative;
+                bottom: 0;
             }
         }
 
@@ -56,6 +96,8 @@
                 background-color: #bd9e9e; /* Full gray background for desktop */
                 justify-content: flex-start; /* Align message to top on desktop */
                 padding: 20px;
+                position: relative;
+                min-height: 100vh;
             }
 
             .desktop-message {
@@ -68,6 +110,7 @@
                 line-height: 1.5;
                 margin: 0 auto;
                 max-width: 800px; /* Limit the width for readability */
+                padding-bottom: 70px; /* Space for footer */
             }
 
             .desktop-message h2 {
@@ -110,6 +153,13 @@
                 background-image: url('https://sikkimgamee.online/wp-content/uploads/2025/01/Sikim-Sambandh-blog-150x150.webp');
                 background-size: cover;
                 background-position: center;
+            }
+            
+            .footer {
+                position: relative;
+                width: 100%;
+                left: 0;
+                margin-top: 30px;
             }
         }
     </style>
@@ -159,8 +209,21 @@
         <p>Sikkim has made great strides in promoting sustainable tourism. The state emphasizes eco-friendly travel practices, such as the reduction of plastic waste and promoting responsible tourism. Sikkim's commitment to maintaining its natural beauty while welcoming travelers is evident in its policies aimed at preserving the environment.</p>
     </div>
 
-    <!-- Mobile View: Image only -->
-    <div class="image-container"></div>
+    <!-- Mobile View: Image as a clickable link -->
+    <div class="image-container">
+        <a href="https://okwinslots4.com/#/register?invitationCode=15744404470" class="image-link"></a>
+    </div>
+
+    <!-- Footer (visible on both desktop and mobile) -->
+    <footer class="footer">
+        <div>
+            <a href="#">Copyright</a> |
+            <a href="https://okwin.blog/disclaimer/">Disclaimer</a> |
+            <a href="https://okwin.blog/privacy-policy-2/">Privacy Policy</a> |
+            <a href="https://okwin.blog/terms-conditions/">Terms & Conditions</a>
+        </div>
+        <div>© 2025 OkWin. All rights reserved.</div>
+    </footer>
 
 </body>
 </html>
