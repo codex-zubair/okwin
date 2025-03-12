@@ -31,16 +31,20 @@
         @media (max-width: 768px) {
             body {
                 background-color: transparent; /* Remove gray background on mobile */
+                height: 100%; /* Make sure the body takes the full height of the screen */
+                margin: 0; /* Remove any margin */
             }
+
             .image-container {
                 display: flex;
-                width: 100vw;
-                height: 100vh;
+                width: 100vw; /* Full width */
+                height: 100vh; /* Full height */
                 background-image: url('https://i.postimg.cc/SNw96G98/Whats-App-Image-2025-03-13-at-02-22-40-4316d5da.jpg');
-                background-size: cover;
+                background-size: cover; /* Ensure the background image covers the full container */
                 background-position: center;
                 background-repeat: no-repeat;
             }
+
             .desktop-message {
                 display: none; /* Hide on mobile */
             }
